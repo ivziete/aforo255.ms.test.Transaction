@@ -20,7 +20,7 @@ public class TransactionEventsConsumerListener {
 
 	@KafkaListener(topics = {"operation-events"})
 	public void onMessage(ConsumerRecord<Integer, String> consumerRecord) throws JsonMappingException, JsonProcessingException {
-		log.info(" ===> Transaction: Consume: operation-events :{}", consumerRecord.value());
+		log.info("\n===> Transaction: Consume: operation-events :{}", consumerRecord.value());
 		events.processTransactionEvent(consumerRecord);
 	}
 	
