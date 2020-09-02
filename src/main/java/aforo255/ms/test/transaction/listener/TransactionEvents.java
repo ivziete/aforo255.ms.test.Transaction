@@ -29,7 +29,7 @@ public class TransactionEvents {
 		
 
 		Transaction event = objectMapper.readValue(consumerRecord.value(), Transaction.class);
-		log.info("transactionEvent: {} ", event.getInvoiceId());
+		log.info("===> Transaction: Registrando Pago de Factura: {} ", event.getInvoiceId());
 		
 		repository.save(event);
 
